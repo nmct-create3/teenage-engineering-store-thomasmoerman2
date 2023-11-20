@@ -54,19 +54,8 @@
   --duration: 300ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-text-color: var(--neutral-100);
-    --meta-text-color: var(--neutral-400);
-    --border-color: var(--neutral-700);
-
-    --page-background-color: var(--neutral-900);
-    --page-foreground-color: var(--neutral-800);
-  }
-}
-
 /*
-  View transitions
+  View transition animations
 */
 
 @keyframes fade-in {
@@ -105,30 +94,6 @@
   }
 }
 
-@keyframes slide-from-bottom {
-  from {
-    transform: translateY(2rem);
-  }
-}
-
-@keyframes slide-to-bottom {
-  to {
-    transform: translateY(2rem);
-  }
-}
-
-@keyframes slide-to-top {
-  to {
-    transform: translateY(-2rem);
-  }
-}
-
-@keyframes slide-from-top {
-  from {
-    transform: translateY(-2rem);
-  }
-}
-
 @keyframes scale-down {
   to {
     transform: scale(.9);
@@ -138,18 +103,6 @@
 @keyframes scale-up {
   from {
     transform: scale(.9);
-  }
-}
-
-@keyframes slide-from-bottom {
-  from {
-    transform: translateY(2rem);
-  }
-}
-
-@keyframes slide-to-top {
-  to {
-    transform: translateY(-2rem);
   }
 }
 
@@ -164,7 +117,11 @@
   set the box-sizing to border-box
 */
 
-* {}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*
   global page styles
@@ -172,7 +129,7 @@
   Set the font family to neue haas unica as told in the adobe fonts project
   Set the global font-weight to 300
   Set the global line-height to 1.5
-  Set the global text color and background color
+  Set the global text color and background color with the custom properties
 */
 
 html {}
@@ -205,7 +162,7 @@ h2,
 h3,
 h4 {}
 
-/* set the h2 to a font-size xl and a smaller line-height */
+/* set the h2 to a font-size xl and the correct line-height */
 
 h2 {}
 
@@ -227,13 +184,19 @@ hr {}
 
 /* Containers to add a max width and center content */
 
-/* use for example on the news page */
-
 .container {}
 
-.container--s {}
+/* Rows to add whitespace around child elements */
 
-.container--xs {}
+.row {}
+
+.row--xl {}
+
+.row--xxl {}
+
+/* lists */
+
+.list-reset {}
 
 /* Everything inside content should have some space at the top when it's adjacent to another element */
 
@@ -241,27 +204,13 @@ hr {}
   margin-top: var(--space-m);
 }
 
-/* Sections to add whitespace around child elements */
+/* Images */
 
-.row {
-  padding: var(--space-m);
-}
+.image-landscape {}
 
-.row--xl {
-  padding: var(--space-xl) var(--space-m);
-}
-
-.row--xxl {
-  padding: var(--space-xxl) var(--space-m);
-}
-
-/* lists */
-
-.list-reset {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/*
+  Specific styles
+*/
 
 /* button */
 
@@ -278,14 +227,6 @@ hr {}
 .link-meta {}
 
 .link-meta:hover {}
-
-/* Images */
-
-.image-landscape {}
-
-/*
-  Specific styles
-*/
 
 /* Site header */
 
@@ -377,78 +318,43 @@ hr {}
 
 /* Text */
 
-.break-word {
-  word-break: break-word;
-}
+.break-word {}
 
-.text-center {
-  text-align: center;
-}
+.text-center {}
 
 /* Whitespace */
 
-.mt-m {
-  margin-top: var(--space-m);
-}
+.mt-m {}
 
-.mt-l {
-  margin-top: var(--space-l);
-}
+.mt-l {}
 
-.mt-xl {
-  margin-top: var(--space-xl);
-}
+.mt-xl {}
 
-.mb-xxs {
-  margin-bottom: var(--space-xxs);
-}
+.mb-xxs {}
 
-.mb-xs {
-  margin-bottom: var(--space-xs);
-}
+.mb-xs {}
 
-.mb-s {
-  margin-bottom: var(--space-s);
-}
+.mb-s {}
 
-.mb-m {
-  margin-bottom: var(--space-m);
-}
+.mb-m {}
 
-.mb-l {
-  margin-bottom: var(--space-l);
-}
+.mb-l {}
 
-.mb-xl {
-  margin-bottom: var(--space-xl);
-}
+.mb-xl {}
 
 /* Font sizes */
 
-.fs-base {
-  font-size: var(--font-size-base);
-  line-height: 1.5;
-}
+.fs-base {}
 
-.fs-l {
-  font-size: var(--font-size-l);
-  line-height: 2rem;
-}
+.fs-l {}
 
-.fs-xl {
-  font-size: var(--font-size-xl);
-  line-height: 3rem;
-}
+.fs-xl {}
 
 /* Colors */
 
-.bg-gray {
-  background-color: var(--page-foreground-color);
-}
+.bg-gray {}
 
-.color-meta {
-  color: var(--meta-text-color);
-}
+.color-meta {}
 
 /* widths */
 
@@ -502,24 +408,4 @@ hr {}
     grid-column: span 9;
   }
 
-}
-
-/* y: vertical */
-
-@media (min-width: 62em) {
-
-  .y-span-2-bp3 {
-    grid-row: span 2;
-  }
-
-}
-
-/* prefers reduced motion */
-@media (prefers-reduced-motion) {
-
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none !important;
-  }
 }
