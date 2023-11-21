@@ -1,5 +1,3 @@
-@import "https://unpkg.com/open-props/easings.min.css";
-
 :root {
   --orange: #ff9637;
   --darkgreen: #005037;
@@ -44,67 +42,21 @@
   --space-xl: 3rem;
   --space-xxl: 4.5rem;
 
-  --ease-out: var(--ease-out-2);
-  --ease-in: var(--ease-in-2);
-  --ease: var(--ease-2);
+  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 
   --duration-xx-fast: 100ms;
-  --duration-x-fast: 150ms;
-  --duration-fast: 200ms;
-  --duration: 300ms;
+  --duration-x-fast: 200ms;
+  --duration-fast: 300ms;
+  --duration: 400ms;
 }
 
 /*
   View transition animations
 */
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-}
-
-@keyframes fade-out {
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes slide-from-left {
-  from {
-    transform: translateX(-2rem);
-  }
-}
-
-@keyframes slide-to-left {
-  to {
-    transform: translateX(-2rem);
-  }
-}
-
-@keyframes slide-from-right {
-  from {
-    transform: translateX(2rem);
-  }
-}
-
-@keyframes slide-to-right {
-  to {
-    transform: translateX(2rem);
-  }
-}
-
-@keyframes scale-down {
-  to {
-    transform: scale(.9);
-  }
-}
-
-@keyframes scale-up {
-  from {
-    transform: scale(.9);
-  }
-}
+/* write custom animation keyframes here */
 
 /*
   Global styles
@@ -140,8 +92,9 @@ html {}
 }
 
 /* Responsive images */
-
-img {
+img,
+svg {
+  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -200,9 +153,7 @@ hr {}
 
 /* Everything inside content should have some space at the top when it's adjacent to another element */
 
-.content>*+* {
-  margin-top: var(--space-m);
-}
+.content>*+* {}
 
 /* Images */
 
