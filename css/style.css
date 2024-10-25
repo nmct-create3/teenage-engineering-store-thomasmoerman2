@@ -16,13 +16,6 @@
   --neutral-800: #222222;
   --neutral-900: #111111;
 
-  --page-text-color: var(--neutral-800);
-  --meta-text-color: var(--neutral-400);
-
-  --page-background-color: white;
-  --page-foreground-color: var(--neutral-200);
-
-  --border-color: var(--neutral-300);
   --border-radius: 8px;
   --border-radius-l: 16px;
 
@@ -41,22 +34,7 @@
   --space-l: 2rem;
   --space-xl: 3rem;
   --space-xxl: 4.5rem;
-
-  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);
-  --ease-decelerate: cubic-bezier(0, 0, 0, 1);
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-
-  --duration-xx-fast: 100ms;
-  --duration-x-fast: 200ms;
-  --duration-fast: 300ms;
-  --duration: 400ms;
 }
-
-/*
-  View transition animations
-*/
-
-/* write custom animation keyframes here */
 
 /*
   Global styles
@@ -160,108 +138,24 @@ hr {}
 .image-landscape {}
 
 /*
-  Specific styles
+  Component Specific styles
 */
-
-/* button */
-
-.button {}
-
-.button:hover {}
 
 /* Links */
 
-.link-simple {}
-
-.link-simple:hover {}
-
-.link-meta {}
-
-.link-meta:hover {}
-
 /* Site header */
-
-.header {}
-
-.header__logo {}
-
-.header__wrapper {
-
-  @media screen and (min-width: 40em) {}
-}
-
-.header__title {}
-
-.header__nav {
-
-  @media screen and (min-width: 40em) {}
-}
-
-.header__logo {}
 
 /* Navigation */
 
-.nav__list {}
-
-.nav__item {}
-
-.nav__link {}
-
-.nav__link:hover,
-.nav__link--active {}
-
-.nav__active {}
-
 /* Categories */
-
-.category+.category {}
-
-.category__header {}
 
 /* Products */
 
-.products {
-  @media screen and (min-width: 40rem) {}
-}
-
-.product {}
-
-.product__link {}
-
-.product__title {
-
-  .product__link:hover & {}
-}
-
-.product__price {}
-
-.product__img {
-
-  .product__link:hover & {}
-}
-
 /* Site footer */
-
-.footer {}
 
 /* Contact */
 
-.contact {}
-
-.contact__content {}
-
 /* Product detail */
-
-.detail {}
-
-.detail__image {}
-
-.detail__image,
-.detail__body {}
-
-.detail__body {
-  @media screen and (min-width: 62em) {}
-}
 
 /*
   Reusable utitlity classes: classes that do one thing and one thing only.
@@ -269,94 +163,10 @@ hr {}
 
 /* Text */
 
-.break-word {}
-
-.text-center {}
-
 /* Whitespace */
-
-.mt-m {}
-
-.mt-l {}
-
-.mt-xl {}
-
-.mb-xxs {}
-
-.mb-xs {}
-
-.mb-s {}
-
-.mb-m {}
-
-.mb-l {}
-
-.mb-xl {}
 
 /* Font sizes */
 
-.fs-base {}
-
-.fs-l {}
-
-.fs-xl {}
-
 /* Colors */
 
-.bg-gray {}
-
-.color-meta {}
-
 /* widths */
-
-.max-width-s {
-  max-width: 36rem;
-}
-
-@media (min-width: 40em) {
-
-  .x-span-3-bp2 {
-    grid-column: span 3;
-  }
-
-  .x-span-4-bp2 {
-    grid-column: span 4;
-  }
-
-  .x-span-6-bp2 {
-    grid-column: span 6;
-  }
-
-  .x-span-8-bp2 {
-    grid-column: span 8;
-  }
-
-  .x-span-9-bp2 {
-    grid-column: span 9;
-  }
-
-}
-
-@media (min-width: 62em) {
-
-  .x-span-3-bp3 {
-    grid-column: span 3;
-  }
-
-  .x-span-4-bp3 {
-    grid-column: span 4;
-  }
-
-  .x-span-6-bp3 {
-    grid-column: span 6;
-  }
-
-  .x-span-8-bp3 {
-    grid-column: span 8;
-  }
-
-  .x-span-9-bp3 {
-    grid-column: span 9;
-  }
-
-}
