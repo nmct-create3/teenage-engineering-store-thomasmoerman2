@@ -16,6 +16,13 @@
   --neutral-800: #222222;
   --neutral-900: #111111;
 
+  --page-text-color: var(--neutral-800);
+  --meta-text-color: var(--neutral-400);
+
+  --page-background-color: white;
+  --page-foreground-color: var(--neutral-200);
+
+  --border-color: var(--neutral-300);
   --border-radius: 8px;
   --border-radius-l: 16px;
 
