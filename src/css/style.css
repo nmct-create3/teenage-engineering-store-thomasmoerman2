@@ -1,0 +1,460 @@
+@import url('https://use.typekit.net/hnx7rqv.css');
+
+:root {
+  --orange: #ff9637;
+  --darkgreen: #005037;
+  --lilac: #5c4492;
+  --tomato: #de5c3b;
+  --blue: #006aaa;
+  --blue: #0071bb;
+
+  --neutral-100: #f7f7f7;
+  --neutral-200: #e9e9e9;
+  --neutral-300: #c4c4c4;
+  --neutral-400: #9b9b9b;
+  --neutral-500: #7a7a7a;
+  --neutral-600: #616161;
+  --neutral-700: #3d3d3d;
+  --neutral-800: #222222;
+  --neutral-900: #111111;
+
+  --page-text-color: var(--neutral-800);
+  --meta-text-color: var(--neutral-400);
+
+  --page-background-color: white;
+  --page-foreground-color: var(--neutral-200);
+
+  --border-color: var(--neutral-300);
+  --border-radius: 8px;
+  --border-radius-l: 16px;
+
+  --font-weight-normal: 300;
+  --font-weight-bold: 400;
+
+  --font-size-base: 1rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2.25rem;
+  --font-size-xxl: 3.375rem;
+
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4.5rem;
+}
+
+/*
+  Global styles
+*/
+
+/*
+  global reset
+  For every element:
+  remove all margin & padding
+  set the box-sizing to border-box
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'neue-haas-unica', sans-serif;
+  font-weight: var(--font-weight-normal);
+}
+
+/*
+  global page styles
+  Set the html element to 18px (using relative units)
+  Set the font family to neue haas unica as told in the adobe fonts project
+  Set the global font-weight to 300
+  Set the global line-height to 1.5
+  Set the global text color and background color with the custom properties
+*/
+
+html {
+}
+
+::selection {
+  background-color: var(--lilac);
+  color: white;
+}
+
+/* Responsive images */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Every ul without a class should look like an ul */
+
+ul:not([class]) {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+/* Headings */
+
+/* set all headings to font-weight 300 */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-weight-normal);
+}
+
+/* set the h2 to a font-size xl and the correct line-height */
+
+h2 {
+  font-size: var(--font-size-xl);
+  line-height: normal;
+}
+
+/* Links */
+
+/* all links should have a color of --blue, provide a hover effect */
+
+a {
+  color: var(--page-text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+/* Other elements */
+
+hr {
+}
+
+/*
+  Reusable objects
+*/
+
+/* Containers to add a max width and center content */
+
+.container {
+  width: min(100%, 94.5rem);
+  margin-inline: auto;
+}
+
+.container--xs {
+  width: min(100%, 40.5rem);
+}
+
+/* Rows to add whitespace around child elements */
+
+.row {
+  padding-block: var(--space-l);
+}
+
+.row--xl {
+  padding-block: var(--space-xl);
+}
+
+.row--xxl {
+  padding-block: var(--space-xxl);
+}
+
+/* lists */
+
+.list-reset {
+}
+
+/* Everything inside content should have some space at the top when it's adjacent to another element */
+
+.content > * + * {
+  color: var(--page-text-color);
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: normal;
+  margin-top: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  width: 40.5rem;
+  margin: 0 auto;
+}
+
+/* Images */
+
+.image-landscape {
+  border-radius: var(--border-radius-l);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 67.5rem;
+  height: 37.6875rem;
+  margin: 0 auto;
+}
+
+/*
+  Component Specific styles
+*/
+
+/* Buttons */
+
+.button {
+  padding: var(--space-xs) var(--space-m);
+  color: var(--page-background-color);
+  width: fit-content;
+  font-weight: var(--font-weight-normal);
+  display: grid;
+  place-content: center;
+  text-align: center;
+
+  /* body large */
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+
+  width: 100%;
+  height: 5.625rem;
+  border-radius: var(--border-radius-l);
+  background: var(--darkgreen);
+}
+
+/* Links */
+
+/* Site header */
+
+.header {
+  height: 100px;
+  padding: var(--space-s) 0;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+  width: 6rem;
+}
+
+.header__logo {
+  width: 6.76769rem;
+  height: 3.375rem;
+  flex-shrink: 0;
+}
+
+/* Navigation */
+
+.nav__list {
+  display: flex;
+  gap: var(--space-s);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav__link {
+  color: var(--page-text-color);
+}
+
+.nav__link--active {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* Categories */
+
+.category {
+  margin-bottom: var(--space-xl);
+}
+
+.category__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--space-s) 0;
+}
+
+.category__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+}
+/* Products */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21.25rem, 1fr));
+  margin: 0 auto;
+  gap: var(--space-m);
+}
+
+.product {
+  width: 100%;
+  height: 25.3125rem;
+  border-radius: 0.5rem;
+  background: var(--neutral-200);
+  padding: var(--space-m);
+}
+
+.product--large {
+  grid-column: span 2;
+  width: 100%;
+  height: 25.3125rem;
+}
+
+.product__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+}
+
+.product__price {
+  font-size: var(--font-size-base);
+  color: var(--meta-text-color);
+  font-weight: var(--font-weight-normal);
+  line-height: normal;
+}
+
+.product__img {
+  margin: 0 auto;
+}
+
+.product__link {
+  display: block;
+}
+
+/* Site footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.0625rem;
+  background: var(--neutral-900);
+  color: var(--page-background-color);
+  padding: 0 2.25rem;
+}
+
+/* Contact */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__content {
+  width: 17.5rem;
+  line-height: 2.25rem;
+  text-align: center;
+  margin: var(--space-m) 0;
+}
+
+/* Product detail */
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-l);
+}
+
+/*
+  Reusable utitlity classes: classes that do one thing and one thing only.
+*/
+
+/* Text */
+
+.text-center {
+  text-align: center;
+}
+
+/* Whitespace */
+
+/* Font sizes */
+
+.fs-base {
+  font-size: var(--font-size-base);
+}
+
+.fs-base {
+  font-size: var(--font-size-base);
+}
+
+.fs-l {
+  font-size: var(--font-size-l);
+}
+
+.fs-xl {
+  font-size: var(--font-size-xl);
+}
+
+.fs-xxl {
+  font-size: var(--font-size-xxl);
+}
+
+/* Colors */
+.color-meta {
+  color: var(--meta-text-color);
+}
+
+.bg-gray {
+  background-color: var(--neutral-200);
+}
+
+.color-page-text {
+  color: var(--page-text-color);
+}
+
+.color-page-background {
+  color: var(--page-background-color);
+}
+
+.bg-page-background {
+  background-color: var(--page-background-color);
+}
+
+.color-page-foreground {
+  color: var(--page-foreground-color);
+}
+
+.bg-page-foreground {
+  background-color: var(--page-foreground-color);
+}
+
+/* links */
+
+.link-simple {
+  text-decoration: underline;
+}
+
+.link-meta {
+  color: var(--meta-text-color);
+}
+
+/* widths */
+
+/* Margin */
+
+.mb-s {
+  margin-bottom: var(--space-s);
+}
+
+.mb-m {
+  margin-bottom: var(--space-m);
+}
+
+.mb-l {
+  margin-bottom: var(--space-l);
+}
+
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
